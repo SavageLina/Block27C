@@ -17,9 +17,10 @@ export const puppyApi = api.injectEndpoints({
   endpoints: (build) => ({
     getPuppies: build.query({
       query: () => ({
-        url: "/players",
+        url: "players",
         method: "GET",
       }),
+      transformResponse:(response) => response.data.players,
       providedTags: ["Puppy"],
     }),
     getPuppy: build.query({
